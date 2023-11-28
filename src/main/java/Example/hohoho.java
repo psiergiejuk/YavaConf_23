@@ -1,3 +1,5 @@
+package Example;
+
 import java.time.LocalDate;
 import java.time.Month;
 
@@ -9,17 +11,24 @@ public class hohoho {
         String noChristmas = "NO it is not Christmas :(";
         int chDay = 24;
         Month chMount = Month.DECEMBER;
-
         LocalDate currentDate = LocalDate.now();
 
-        int date = currentDate.getDayOfMonth();
-        Month month = currentDate.getMonth();
 
-        if(date == chDay && month == chMount) {
+        if (checkDate(currentDate, chDay, chMount)){
             System.out.println(hoHo + isChristmas);
         }
         else {
             System.out.println(hoHo + noChristmas);
         }
     }
+
+    static boolean checkDate(LocalDate currentDate, int chDay, Month chMount) {
+
+        int date = currentDate.getDayOfMonth();
+        Month month = currentDate.getMonth();
+
+        return (date == chDay && month == chMount);
+    }
+
+
 }
