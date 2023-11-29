@@ -26,7 +26,7 @@ jobs:
         env:
           JF_ENV_1: ${{ secrets.JF_SECRET_ENV_1 }}
       - run: |
-          //jf rt dl Download binar
+          #jf rt dl Download binar
   
       - name: Build
         run: |
@@ -86,8 +86,8 @@ jobs:
         env:
           JF_ENV_1: ${{ secrets.BART_JF_SECRET_ENV_1 }}
       - run: |
-          //jf rt del Delete old binary
-          //jf rt u upload new binary
+          #jf rt del Delete old binary
+          #jf rt u upload new binary
           
   #NEXT Job
   release:
@@ -110,5 +110,5 @@ jobs:
           echo "    Release Name: ${{ github.event.release.name }}" >> ChangeLog.txt
           echo "---------------------------------------" >> ChangeLog.txt
           echo "${{ github.event.release.body }}" >> ChangeLog.txt
-          //jf rt u copy build to offical
+          #jf rt u copy build to offical
 
