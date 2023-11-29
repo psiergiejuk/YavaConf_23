@@ -22,11 +22,11 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
 
-      - uses: jfrog/setup-jfrog-cli@v3.4.1
-        env:
-          JF_ENV_1: ${{ secrets.JF_SECRET_ENV_1 }}
-      - run: |
-          echo Download
+      #- uses: jfrog/setup-jfrog-cli@v3.4.1
+      #  env:
+      #    JF_ENV_1: ${{ secrets.JF_SECRET_ENV_1 }}
+      #- run: |
+      #    echo Download
       #jf rt dl Download binar
   
       - name: Build
@@ -82,12 +82,12 @@ jobs:
           name: Manual
           path: YavaConf_23_manual.pdf
           
-      - name: Upload to BART
-        uses: jfrog/setup-jfrog-cli@v3.4.1
-        env:
-          JF_ENV_1: ${{ secrets.BART_JF_SECRET_ENV_1 }}
-      - run: |
-          echo upload
+      #- name: Upload to BART
+      #  uses: jfrog/setup-jfrog-cli@v3.4.1
+      #  env:
+      #    JF_ENV_1: ${{ secrets.JF_SECRET_ENV_1 }}
+      #- run: |
+      #    echo upload
       #jf rt del Delete old binary
       #jf rt u upload new binary
           
@@ -100,17 +100,16 @@ jobs:
     environment: Release Python API
     steps:
         
-      - name: Upload to BART Ofical
-        uses: jfrog/setup-jfrog-cli@v3.4.1
-        env:
-          JF_ENV_1: ${{ secrets.BART_JF_SECRET_ENV_1 }}
-      - run: |
-          echo "---------------------------------------" > ChangeLog.txt
-          echo "    YavaConf 2023 ChangeLog" >> ChangeLog.txt
-          echo "---------------------------------------" >> ChangeLog.txt
-          echo "    Tag Name: ${{ github.event.release.tag_name }}" >> ChangeLog.txt
-          echo "    Release Name: ${{ github.event.release.name }}" >> ChangeLog.txt
-          echo "---------------------------------------" >> ChangeLog.txt
-          echo "${{ github.event.release.body }}" >> ChangeLog.txt
-      #jf rt u copy build to offical
+    #  - name: Upload to BART Ofical
+    #    uses: jfrog/setup-jfrog-cli@v3.4.1
+    #    env:
+    #      JF_ENV_1: ${{ secrets.BART_JF_SECRET_ENV_1 }}
+    #  - run: |
+    #      echo "---------------------------------------" > ChangeLog.txt
+    #      echo "    YavaConf 2023 ChangeLog" >> ChangeLog.txt
+    #      echo "---------------------------------------" >> ChangeLog.txt
+    #      echo "    Tag Name: ${{ github.event.release.tag_name }}" >> ChangeLog.txt
+    #      echo "    Release Name: ${{ github.event.release.name }}" >> ChangeLog.txt
+    #      echo "${{ github.event.release.body }}" >> ChangeLog.txt
+    #  #jf rt u copy build to offical
 
