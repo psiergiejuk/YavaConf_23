@@ -35,7 +35,10 @@ jobs:
     needs: job2
     steps:
     - name: Send greeting
-      run: echo "Hello 3"
+      run: |
+        echo ::group::LONG_LOG
+        tape README.md
+        echo ::endgroup::
   job4:
     environment: Test
     runs-on: ubuntu-latest
