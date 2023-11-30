@@ -37,9 +37,9 @@ jobs:
     - name: Send greeting
       run: echo "Hello 3"
   job4:
+    environment: Test
     runs-on: ubuntu-latest
     needs: job2
-    environment: Test
     steps:
     - name: Send greeting
       run: echo "Hello 4"
