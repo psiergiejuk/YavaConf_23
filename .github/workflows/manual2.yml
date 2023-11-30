@@ -37,7 +37,19 @@ jobs:
     - name: Send greeting
       run: |
         echo ::group::LONG_LOG
-        tape README.md
+        echo "Test data "
+        echo "Test data "
+        echo "Test data "
+        echo "Test data "
+        echo "Test data "
+        echo "Test data "
+        echo "Test data "
+        echo "Test data "
+        echo "Test data "
+        echo "Test data "
+        echo "Test data "
+        echo "Test data "
+        echo "Test data "
         echo ::endgroup::
   job4:
     environment: Test
