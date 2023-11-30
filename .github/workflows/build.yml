@@ -22,11 +22,11 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
 
-      #- uses: jfrog/setup-jfrog-cli@v3.4.1
-      #  env:
-      #    JF_ENV_1: ${{ secrets.JF_SECRET_ENV_1 }}
-      #- run: |
-      #    echo Download
+      - uses: jfrog/setup-jfrog-cli@v3.4.1
+        env:
+          JF_ENV_1: ${{ secrets.JF_SECRET_ENV_1 }}
+      - run: |
+          echo Download
       #jf rt dl Download binar
   
       - name: Build
